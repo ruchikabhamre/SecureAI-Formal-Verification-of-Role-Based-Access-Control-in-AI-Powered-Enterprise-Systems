@@ -1,18 +1,14 @@
 # SecureAI: Formal Verification of Role-Based Access Control in AI-Powered Enterprise Systems
 
-> **Project proposal for the Software Verification course.**
-> Dear Professor, we would like to propose the project described in this repository for the Software Verification course. We would appreciate your feedback on the topic and its suitability for the course.
-
 | | |
 |---|---|
 | **Team** | TAG |
-| **Members** | Swapnil Jadhavar (swapniljadhavar7@gmail.com), Ruchika Bhamre |
+| **Members** | Swapnil Jadhavar (swapniljadhavar7@gmail.com), Ruchika Bhamre(ruchikabhamare035@gmail.com) |
 | **Verification tool** | [Dafny](https://dafny.org) (with the Z3 SMT solver) |
 | **Repository** | [https://github.com/swapniljadhavar7/SecureAI-Formal-Verification-of-Role-Based-Access-Control-in-AI-Powered-Enterprise-Systems] |
 | **Status** | Proposal stage: starter model and first lemmas included to show feasibility |
 
 ---
-
 ## 1. Problem statement
 
 Enterprise AI platforms give people access to sensitive **documents**, **datasets** and **AI models**. Incorrect permission handling or role management can result in unauthorized access and security vulnerabilities.
@@ -44,29 +40,7 @@ A small, formally verified RBAC prototype for an enterprise AI platform, includi
 - tests (`tests/RbacTests.dfy`),
 - technical documentation (`docs/`).
 
-## 5. Repository layout
-
-```
-.
-├── README.md                     <- this proposal
-├── PROPOSAL.md                   <- proposal letter, scope, milestones, risks
-├── docs/
-│   ├── properties.md             <- properties to be verified, mapped to lemmas
-│   ├── plan.md                   <- milestones and evaluation criteria
-│   └── limitations.md            <- what the proofs do and do not guarantee
-├── src/
-│   ├── Rbac.dfy                  <- RBAC model, operations, invariants, lemmas
-│   ├── Platform.dfy              <- example AI-platform policy (roles, perms, conflicts)
-│   └── Demo.dfy                  <- runnable illustrative application
-├── examples/faulty/
-│   └── FaultyRbac.dfy            <- deliberately buggy versions (expected to FAIL)
-├── tests/
-│   └── RbacTests.dfy             <- runtime tests (dafny test)
-├── scripts/check.sh              <- verify + test + check faulty code is rejected
-└── .github/workflows/verify.yml  <- CI
-```
-
-## 6. Quick start
+## 5. Quick start
 
 Install [Dafny 4.x](https://github.com/dafny-lang/dafny/releases), then:
 
@@ -77,24 +51,12 @@ dafny run src/Demo.dfy             # run the demo application
 dafny test tests/RbacTests.dfy     # run runtime tests
 ```
 
-## 7. Model at a glance
-
-- **Resources**: documents, datasets and models, identified by name (e.g. `dataset:customers`, `model:churn`).
-- **Permission**: an *action* (`Read`, `Write`, `Invoke`, `Train`, `Approve`) on a resource.
-- **Roles** grant sets of permissions; **users** hold sets of roles.
-- **Conflicts** are pairs of roles that no single user may hold together (separation of duties), e.g. `DataScientist` and `ModelApprover`: whoever trains a model must not approve it.
-- **Access decision**: allow iff one of the user's roles grants the permission; deny otherwise.
-
-## 8. Limitations (summary)
-
-The proofs cover the *model and its Dafny implementation*, not authentication, networking, persistence, concurrency or a deployed AI system. See [`docs/limitations.md`](docs/limitations.md).
-
-## 9. Team
+## 6. Team
 
 | Name | Contact |
 |---|---|
 | Swapnil Jadhavar | swapniljadhavar7@gmail.com |
-| Ruchika Bhamre | [email] |
+| Ruchika Bhamre | [ruchikabhamare035@gmail.com] |
 
 ## License
 
