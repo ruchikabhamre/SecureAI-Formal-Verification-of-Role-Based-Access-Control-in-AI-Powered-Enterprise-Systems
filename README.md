@@ -8,7 +8,7 @@
 | **Team** | TAG |
 | **Members** | Swapnil Jadhavar (swapniljadhavar7@gmail.com), Ruchika Bhamre |
 | **Verification tool** | [Dafny](https://dafny.org) (with the Z3 SMT solver) |
-| **Repository** | [Repository URL] |
+| **Repository** | [https://github.com/swapniljadhavar7/SecureAI-Formal-Verification-of-Role-Based-Access-Control-in-AI-Powered-Enterprise-Systems] |
 | **Status** | Proposal stage: starter model and first lemmas included to show feasibility |
 
 ---
